@@ -1,0 +1,46 @@
+pip freeze > requirements.txt(for requirements list)
+pip install -r requirements.txt to install (create  virtual env first)
+
+
+
+created a virtual environment using python -m venv {env name}
+enter the enviroment using venv\Scripts\activate.bat
+
+install django using following command:
+pip install django --user {--user is needed to grant  admin privileges in vs code}
+
+start a project using django-admin startproject command
+    after go into the dir and put command 'python manage.py startapp todo/{app_name}'
+
+run server using python manage.py runserver
+
+
+import os in pathlib in settings.py
+install app in INSTALLED APPS (todo.apps.ToDoConfig)
+
+DIRS': [os.path.join(BASE_DIR ,'templates ')],
+
+
+pr_name/urls.py
+from django.urls import path, include 
+path('',include('app_name.urls')) in urls.py of main pr
+
+
+in start app /app_nam
+urls.py{
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('',views.home)
+]}
+
+
+in pr_name/view.py{
+    from django.shortcuts import render
+from django.http import HttpResponse
+# Create your views here.
+
+def home(request):
+    return HttpResponse("Working")
+}
