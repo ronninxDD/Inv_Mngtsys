@@ -15,7 +15,7 @@ start a project using django-admin startproject command
 run server using python manage.py runserver
 
 
-import os in pathlib in settings.py
+'import os' in pathlib in settings.py
 install app in INSTALLED APPS (todo.apps.ToDoConfig)
 
 DIRS': [os.path.join(BASE_DIR ,'templates ')],
@@ -61,4 +61,13 @@ in pr_name/mdoels.py{
         return self.title
     class Meta:
         ordering = ['complete'] 
+}
+
+NOTE whenever you make changes to your models.py you wanna make migrations to migrate the database
+go to pr_name cd and run command  'python manage.py makemigrations ' then 'migrate' then 
+create superuser using cmd python manage.py createsuperuser
+
+you can import the models from the models.py in admin.py{
+form . models import Task
+admin.site.register(Task)
 }
